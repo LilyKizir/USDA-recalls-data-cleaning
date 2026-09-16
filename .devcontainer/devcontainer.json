@@ -1,21 +1,22 @@
 {
-	"name": "USDA recalls data cleaning",
-	"image": "mcr.microsoft.com/devcontainers/python:3.12",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"remoteEnv": {
+    "name": "USDA recalls data cleaning",
+    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "remoteEnv": {
         "DBT_PROFILES_DIR": "${containerWorkspaceFolder}/transformer"
     },
-	"customizations": {
-    	"vscode": {
-      		"extensions": [
-        		"ms-python.python"
-      		],
-			"settings": {
-        		"python.defaultInterpreterPath": "/usr/local/bin/python3",
-        		"dbt.dbtPythonPathOverride": "/usr/local/bin/python3",
-        		"dbt.projectDirs": ["transformer"]
-    		}
-		}
-  	},
-	"updateContentCommand": "pip install --upgrade pip && pip install python-dotenv requests cryptography"
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python3",
+                "dbt.dbtPythonPathOverride": "/usr/local/bin/python3",
+                "dbt.projectDirs": ["transformer"]
+            }
+        }
+    },
+    "updateContentCommand": "pip install --upgrade pip && pip install python-dotenv requests cryptography pandas ipykernel curl_cffi"
 }
